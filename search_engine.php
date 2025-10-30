@@ -100,7 +100,14 @@ function execute_search(array $tokens, $conn) {
     }
     $stmt->close();
 
-    $debug_info = "Consulta MySQL generada:\n" . htmlspecialchars($boolean_query);
+    // Construir la consulta SQL completa para depuración, reemplazando '?' con la consulta booleana.
+    $debug_sql = str_replace('?', "'" . $conn->real_escape_string($boolean_query) . "'", $sql);
+    // Formatear para legibilidad
+    $debug_sql_formatted = preg_replace('/\s+/', ' ', $debug_sql);
+    $debug_sql_formatted = str_replace('FROM', "\nFROM", $debug_sql_formatted);
+    $debug_sql_formatted = str_replace('WHERE', "\nWHERE", $debug_sql_formatted);
+    $debug_sql_formatted = str_replace('ORDER BY', "\nORDER BY", $debug_sql_formatted);
+    $debug_info = "Consulta SQL ejecutada:\n" . htmlspecialchars($debug_sql_formatted);
 
     return ['results' => $results, 'debug' => $debug_info];
 }
