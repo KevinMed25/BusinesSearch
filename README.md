@@ -77,3 +77,20 @@ Esta aplicación ha evolucionado desde una implementación manual de un índice 
 2.  **Dependencia de la Configuración de MySQL**: El comportamiento de la búsqueda (ej. longitud mínima de palabra a indexar) depende de la configuración del servidor MySQL, no solo del código PHP.
 
 En resumen, la versión anterior fue un excelente ejercicio académico para entender los fundamentos de los motores de búsqueda, pero la **versión actual con `MySQL FULLTEXT` es una solución mucho más profesional, eficiente y robusta** para una aplicación real.
+
+## Interfaz y Ejemplos de uso
+
+*Ejemplo de relevancia*
+![Interfaz Principal](pictures/Ejemplo-relevancia.jpeg)
+
+*Ejemplo de operador CADENA*
+![Resultados de Búsqueda](pictures/Ejemplo-CADENA.jpeg)
+
+*Ejemplo de operador AND*
+![Proceso de Indexación](pictures/Ejemplo-AND.jpeg)
+
+*Ejemplo de operador AND NOT*
+![Resultados de Búsqueda](pictures/Ejemplo-ANDNOT.jpeg)
+
+*Ejemplo de operador OR*
+![Proceso de Indexación](pictures/Ejemplo-OR.jpeg)
